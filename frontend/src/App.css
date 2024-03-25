@@ -1,0 +1,76 @@
+:root{
+  --text-color: antiquewhite;
+}
+
+
+.container-app{
+  background-color:sienna;
+}
+
+.navbar-expand.default{
+  background-color: saddlebrown;
+  padding-top: 14px;
+}
+
+.navLink {
+  color:antiquewhite;  
+  padding: 14px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-variant: small-caps;
+  font-size: 1.25em;
+  width: 100vw/5;
+}
+
+.navLogo {
+  color: var(--text-color);  
+  padding: 14px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100vw/8;
+}
+
+.navbar-nav.al-auto {
+  padding: 0px 6vw;
+  max-width: (100/5)vw;
+}
+
+.page-head {
+  color: var(--text-color);
+  padding: 28px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-variant: small-caps;
+  width: 100vw;
+}
+
+.row.menu-row{
+  padding: 10px 10px;
+}
+
+.container-fluid.tile {
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  width: (100/4)vw;
+  aspect-ratio: 2;
+
+}
+
+.about-text{
+  color:antiquewhite;  
+  padding: 0px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-variant:normal;
+  font-size: 1.25em;
+  width: 100vw;
+}
