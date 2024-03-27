@@ -49,6 +49,7 @@
 
 .home-subhead{
   padding: 28px 0px;
+  text-align: center;
 }
 
 .row.home-featured-row{
@@ -95,8 +96,28 @@
 }
 
 
+.row.home-rewards-other-row{
+  border-top-style:dashed;
+  border-bottom-style:dashed;
+  border-color:(var(--text-color));
 
+  background-color: rgb(237, 167, 76);
 
+  color: var(--text-color);
+  padding: 28px 0px;
+  height: fit-content;
+
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps; 
+}
+
+.col-6.reward-col{
+  border-right-style:dashed;
+  border-color:(var(--text-color));
+
+  text-align:center;
+}
 
 .row.menu-row{
   padding: 10px 10px;

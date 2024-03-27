@@ -32,8 +32,23 @@ function Home() {
                 <Link class="navLink" to="/menu">Click HERE to view our menu!</Link>
             </div>
             {/* Highlight Rewards Program, incentive to sign in / sign up */}
-            <div class="row home-rewards-row">
+            <div class="row home-rewards-other-row">
                 
+                <div class="col-6 reward-col">
+                    <h2 class="home-subhead">
+                        Rewards Program
+                    </h2>
+                    Here at Wake'N'Bake, we value our loyal customers, and want to give back. 
+                    <br></br> 
+                    Please sign in or sign up at the link to the right.
+                    <br></br>
+                    Upon signing in, you will be able to place orders, and accrue rewards on each purchase!
+                    <br></br>
+                    <Link class="navLink" to="/account">Proceed to Log-In</Link>
+                </div>
+                <div class="col-6">
+                    Other Home Page Stuff
+                </div>
             </div>
             <p>Group ###'s project</p>
         </div>        
