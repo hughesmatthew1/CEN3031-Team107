@@ -47,11 +47,62 @@
   width: 100vw;
 }
 
+.home-subhead{
+  padding: 28px 0px;
+}
+
+.row.home-featured-row{
+  border-top-style:dashed;
+  border-bottom-style:dashed;
+  border-color:(var(--text-color));
+
+  background-color:rgb(170, 120, 55);
+
+  color: var(--text-color);
+  padding: 28px 0px;
+  height: fit-content;
+
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps; 
+}
+
+.col-4.item-1{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+.col-4.item-2{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+.col-4.item-3{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+
+
+
+
 .row.menu-row{
   padding: 10px 10px;
 }
 
-.container-fluid.tile {
+.button.container-fluid.tile {
   border-style: groove;
   border-color:maroon;
   border-width: 6px;
@@ -61,7 +112,21 @@
 
   width: (100/4)vw;
   aspect-ratio: 2;
+}
 
+.modal-content.menu-modal-content{
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  justify-content: center;
+  justify-self: center;
+
+  width: (100/4)vw;
+  aspect-ratio: 2;
 }
 
 .about-text{
