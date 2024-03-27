@@ -8,6 +8,9 @@ function Order() {
                 <p>Query if user is logged in w jwt</p>
                 <p>If not logged in, say log in to add items to cart, provide link to account page</p>
                 <p>If logged in, display cart</p>
+                <div class="user-cart">
+
+                </div>
             </div>
         </section>
         // Order page html

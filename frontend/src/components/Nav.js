@@ -24,7 +24,9 @@ function Nav() {
                         <Link class="navLink" to='/about'>About</Link>
                     </div>
                     <div class='navLogo'>
-                        Wake'n'Bake
+                        <div class='sub-navLogo'>
+                            LOGO
+                        </div> 
                     </div>                        
                 </div>
             </nav>

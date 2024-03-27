@@ -1,11 +1,16 @@
+/* Global Variables */
+
 :root{
   --text-color: antiquewhite;
 }
 
+/* General Styling */
 
 .container-app{
   background-color:sienna;
 }
+
+/* Navbar Styling */
 
 .navbar-expand.default{
   background-color: saddlebrown;
@@ -20,21 +25,28 @@
   display: inline-block;
   font-variant: small-caps;
   font-size: 1.25em;
-  width: 100vw/5;
-}
-
-.navLogo {
-  color: var(--text-color);  
-  padding: 14px 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100vw/8;
 }
 
 .navbar-nav.al-auto {
-  padding: 0px 6vw;
-  max-width: (100/5)vw;
+  padding: 0px 3vw;
+  max-width: 18.33vw;
+}
+
+.navLogo {
+  background-image: url(./../public/images/WNBLogo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  color:rgba(240, 248, 255, 0);  
+  padding: 0px 3vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height:inherit
+}
+
+.sub-navLogo{
+  padding: 14px 0px;
 }
 
 .page-head {
@@ -47,6 +59,8 @@
   width: 100vw;
 }
 
+/* Home Page Styling */
+
 .logo-image{
   background-image: url(./../public/images/WNBLogo.png);
   background-size: contain;
@@ -55,6 +69,7 @@
 
   height:256px;
 }
+
 .home-subhead{
   padding: 28px 0px;
   text-align: center;
@@ -127,6 +142,8 @@
   text-align:center;
 }
 
+/* Menu Page Stying */
+
 .row.menu-row{
   padding: 10px 10px;
 }
@@ -157,6 +174,14 @@
   width: (100/4)vw;
   aspect-ratio: 2;
 }
+
+/* Order Page Styling */
+
+.user-cart{
+
+}
+
+/* About Page Styling */
 
 .about-text{
   color:antiquewhite;  
