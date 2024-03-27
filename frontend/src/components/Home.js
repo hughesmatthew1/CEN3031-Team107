@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 function Home() {
     return(
         <div>
             <h1 class="page-head">Welcome to Wake'N'Bake</h1>
-            <p> add logo</p>
+            <div class="logo-image"></div>
             <p class="page-head">
                 You got the munchies? <br></br>You're in the right place
             </p>
@@ -50,7 +52,6 @@ function Home() {
                     Other Home Page Stuff
                 </div>
             </div>
-            <p>Group ###'s project</p>
         </div>        
     );
 }

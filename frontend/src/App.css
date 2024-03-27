@@ -47,6 +47,14 @@
   width: 100vw;
 }
 
+.logo-image{
+  background-image: url(./../public/images/WNBLogo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height:256px;
+}
 .home-subhead{
   padding: 28px 0px;
   text-align: center;
