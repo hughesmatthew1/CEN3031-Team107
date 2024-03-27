@@ -1,10 +1,11 @@
 //dependencies -> npm i express mongoose
 //npm i --save-dev dotenv nodemon
 //make sure to download mongodb (compass) on your local machine
-//set .env database url as the same one in your mongodb application
+//set .env database url as the same one in your mongodb application using the following code
+//DATABASE_URL = 'mongodb://localhost:27017/WakeNBake'
 
 //npm run devStart to initialize
-//nodemon server.js in terminal to run server
+//nodemon server.js if above doesnt work in terminal to run server
 require('dotenv').config()
 
 const express = require('express')
