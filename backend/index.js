@@ -1,3 +1,6 @@
+//dependencies -> npm i express mongoose
+//npm i --save-dev dotenv nodemon
+//ignore this file, working in server.js
 const express = require('express');
 const bodyParser = require("body-parser");
 

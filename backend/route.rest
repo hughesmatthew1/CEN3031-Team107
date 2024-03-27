@@ -1,0 +1,54 @@
+//used to test the routes, install rest client in visual studio code
+GET http://localhost:3000/menu
+
+###
+
+GET http://localhost:3000/menu/66039a0db157c6980c501d92
+
+###
+
+POST http://localhost:3000/menu
+Content-Type: application/json
+
+{
+    "name": "Glazed Donut",
+    "price": 4.99,
+    "image": "donut.jpg",
+    "description": "Warm fresh donut covered with homemade glaze",
+    "macronutrients":{
+        "calories": 450,
+        "fats": 30,
+        "carbs": 45,
+        "protein": 8
+    },
+    "allergens": "none",
+    "rewardsPointsCOST": 200,
+    "rewardsPointsADD": 100
+
+
+}
+
+###
+
+DELETE http://localhost:3000/menu/66039d7b7be81e1fe5d5b859
+
+###
+
+GET http://localhost:3000/user
+
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "username": "dragon",
+    "password": "bananaman",
+    "rewardPoints": 0
+
+
+}
+
+###
+
+DELETE http://localhost:3000/user/66039fed537254b107ee1261
