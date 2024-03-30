@@ -1,3 +1,7 @@
+// Dependencies:
+// npm install
+
+
 import './App.css';
 import Nav from './components/Nav.js';
 import Home from './components/Home.js';

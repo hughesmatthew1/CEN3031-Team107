@@ -142,11 +142,11 @@
 
 /* Menu Page Stying */
 
-.row.menu-row{
-  padding: 10px 10px;
+.row.gy-3.menu-row{
+  padding: 10px 20px;
 }
 
-.button.container-fluid.tile {
+.button.container-fluid.menuItem-tile {
   border-style: groove;
   border-color:maroon;
   border-width: 6px;
@@ -156,6 +156,10 @@
 
   width: (100/4)vw;
   aspect-ratio: 2;
+}
+
+.row.menuItem-img-row{
+  height:90%
 }
 
 .modal-content.menu-modal-content{
@@ -173,10 +177,17 @@
   aspect-ratio: 2;
 }
 
+.modal-header{
+  justify-content: space-between;
+}
+
 /* Order Page Styling */
 
+.order-page-body{
+  padding: 0px 25vw;
+}
+
 .user-cart{
-  padding: 28px 25vw;
   justify-items: center;
 
   border-style: groove;

@@ -1,25 +1,24 @@
 import React from "react";
 import MenuModal from "./MenuModal";
 
-function MenuItem(){
+function MenuItem({item}){
     return(
         <section>
-            <button type="button" class="button container-fluid tile" data-bs-toggle="modal" data-bs-target="#MenuModal">
-                <div class="row">
+            <button type="button" class="button container-fluid menuItem-tile" data-bs-toggle="modal" data-bs-target="#MenuModal">
+                <div class="row menuItem-img-row">
                     Image Make entire tile a button that adds to active user cart
                     {/* Image */}
                 </div>
                 <div class="row">
                     <div class="col-9">
-                        Item Name
+                        {item.name}
                     </div>
                     <div class = "col-3">
-                        Price
-                        {/* Macro Popup */}
+                        {item.price}
                     </div>
                 </div>
             </button>
-            {<MenuModal/>}
+            {<MenuModal item={item}/>}
         </section>
     );
 }
