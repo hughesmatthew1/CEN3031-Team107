@@ -1,12 +1,12 @@
 //used to test the routes, install rest client in visual studio code
+//getting all menu items
 GET http://localhost:3000/menu
 
 ###
-
-GET http://localhost:3000/menu/66039a0db157c6980c501d92
-
+//getting a single menu item by id
+GET http://localhost:3000/menu/66039d95513343748492c8ae
 ###
-
+//creating a menu item
 POST http://localhost:3000/menu
 Content-Type: application/json
 
@@ -29,15 +29,15 @@ Content-Type: application/json
 }
 
 ###
-
-DELETE http://localhost:3000/menu/66039d7b7be81e1fe5d5b859
+//deleting a menu item
+DELETE http://localhost:3000/menu/66039d95513343748492c8ae
 
 ###
-
+//getting all users
 GET http://localhost:3000/user
 
 ###
-
+//creating a user
 POST http://localhost:3000/user
 Content-Type: application/json
 
@@ -51,4 +51,59 @@ Content-Type: application/json
 
 ###
 
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "username": "functionality",
+    "password": "working",
+    "rewardPoints": 0
+
+
+}
+
+###
+
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "username": "gigachad",
+    "password": "cat",
+    "rewardPoints": 0
+
+
+}
+
+###
+//updating a user **important
+PATCH http://localhost:3000/user/6604e55f2a65488c5ea19c99
+Content-Type: application/json
+
+{
+    "rewardPoints": 1000
+}
+###
+//deleting a user
 DELETE http://localhost:3000/user/66039fed537254b107ee1261
+
+###
+//getting all toppings
+GET http://localhost:3000/topping
+###
+//creating a topping
+POST http://localhost:3000/topping
+Content-Type: application/json
+
+{
+    "name": "chocolate syrup",
+    "price": 1.99,
+    "rewardPointsCOST": 0,
+    "rewardPointsADD": 0
+
+}
+
+###
+//deleting a topping
+DELETE http://localhost:3000/topping/661a8487f5caf23ec7f8ed59
+

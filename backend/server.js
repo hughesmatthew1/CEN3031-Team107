@@ -27,8 +27,10 @@ app.use(express.json())
 
 const menuRouter = require('./routes/menu')
 const userRouter = require('./routes/user')
+const toppingRouter = require('./routes/topping')
 
 app.use('/menu', menuRouter)
 app.use('/user', userRouter)
+app.use('/topping', toppingRouter)
 
 app.listen(3000, () => console.log("Server is running"))
