@@ -3,7 +3,7 @@ import CartItem from './CartItem.js';
 
 function Cart() {
     return(
-        <div class="user-cart">
+        <div className="user-cart">
             <h2>Your Cart</h2>
             {<CartItem/>}
             {<CartItem/>}
