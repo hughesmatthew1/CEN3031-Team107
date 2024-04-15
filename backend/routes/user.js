@@ -51,6 +51,26 @@ router.delete('/:id', getUser, async (req, res) => {
     }
 })
 
+//updating user reward points
+router.patch('/:id', getUser, async (req, res) => {
+    try {
+        if (req.body.rewardPoints != null) {
+            res.user.rewardPoints = req.body.rewardPoints;
+        }
+        const updatedUser = await res.user.save();
+        res.json(updatedUser);
+        //updating user is as follows
+        //review route.rest for instance
+        //PATCH http://localhost:3000/user/6604e55f2a65488c5ea19c99
+        //Content-Type: application/json
+        //{
+            //"rewardPoints": 1000
+        //}
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
 
 async function getUser(req, res, next){
     let user
