@@ -12,14 +12,14 @@ function SignIn(){
             username: username,
             password: password
         }
-
+        // Login request (validate username and password, return token of user)
         await fetch("/user/login", {
             method: "POST", 
             body: JSON.stringify(payload), 
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
-        .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)})
+        .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize active user
         .catch(err => {console.error(err)})
     }
 

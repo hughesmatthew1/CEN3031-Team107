@@ -12,22 +12,20 @@ function SignUp({active_user}){
             username: username,
             password: password
         }
-
+        // Signup request (validates new username, returns token of active user)
         await fetch("/user/signup", {
             method: "POST", 
             body: JSON.stringify(payload), 
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
-        .then(json => {console.log(json)})
+        .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize the current user
         .catch(err => {console.error(err)})
-
-        
     }
 
     return(
         <div className="modal fade" id="SignUpModal" tabIndex="-1" role="dialog" aria-labelledby="MenuTile" aria-hidden="true">
-            <div className="modal-dialog" role="document">
+            <div className="modal-dialog" role="document">s
                 <div className="modal-content menu-modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="SignUp">Sign Up</h5>
