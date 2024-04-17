@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { json } from 'react-router-dom';
 
 function SignIn(){
     const [username, setUsername] = useState("");
@@ -6,19 +7,19 @@ function SignIn(){
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log("form submitted");
+
         const payload = {
             username: username,
             password: password
         }
 
-        await fetch("/user", {
+        await fetch("/user/login", {
             method: "POST", 
             body: JSON.stringify(payload), 
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
-        .then(json => {console.log(json)})
+        .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)})
         .catch(err => {console.error(err)})
     }
 

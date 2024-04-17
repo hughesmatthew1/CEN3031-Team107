@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/users')
+const JWT = require('jsonwebtoken')
 
 //getting all users
 router.get('/', async (req,res) => {
@@ -27,13 +28,68 @@ router.post('/', async (req, res) => {
             rewardPoints,
         });
         
-      const newUser = await user.save();
-      res.status(201).json(newUser);
+        const newUser = await user.save();
+        res.status(201).json(newUser);
     } catch (err) {
-      res.status(400).json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
   });
 
+// Signup route
+
+router.post('/signup', async (req,res)=>{
+    const { username, password} = req.body;
+
+    try{
+        const existingUser = await User.findOne({ username });
+        // Verify Username is not taken
+        if (existingUser) {
+            return res.status(400).json({ message: 'Username is already taken' });
+        }
+        // Creates new user object
+        const user = new User({
+            username,
+            password,
+        });
+        // Saves user object to database
+        const newUser = await user.save();
+        // Creates a token
+        const token = await JWT.sign({username}, "a", {expiresIn: 360000})
+        // Returns token
+        res.json({token})
+        
+    } catch(err){
+        res.status(400).json({ message: err.message })
+    }
+
+})
+
+// Login route
+
+router.post('/login', async (req,res)=>{
+    const { username, password, rewardPoints} = req.body;
+    
+    try {
+        const existingUser = await User.findOne({ username });
+        // Verify user exists
+        if (!existingUser) {
+            return res.status(400).json({ message: 'User does not exist.' });
+        }
+        // Validate password
+        if(password != existingUser.password){
+            return res.status(400).json({ message: "Incorrect password." })
+        }
+
+        // Creates a token
+        const token = await JWT.sign({ username }, "a", { expiresIn: 360000 })
+        // Returns token
+        res.json({token})    
+
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+
+});
 
 //getting one user
 router.get('/:id', getUser, (req,res) => {

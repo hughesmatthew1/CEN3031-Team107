@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-function SignUp(){
+function SignUp({active_user}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -12,7 +13,7 @@ function SignUp(){
             password: password
         }
 
-        await fetch("/user", {
+        await fetch("/user/signup", {
             method: "POST", 
             body: JSON.stringify(payload), 
             headers: {'Content-Type': 'application/json'}
@@ -20,6 +21,8 @@ function SignUp(){
         .then(response => response.json())
         .then(json => {console.log(json)})
         .catch(err => {console.error(err)})
+
+        
     }
 
     return(

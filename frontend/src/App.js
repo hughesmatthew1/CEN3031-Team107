@@ -12,6 +12,7 @@ import About from './components/About.js';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
+
   return (
     <Router>
       <div className="container-app">
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/menu" element={<Menu/>} />
           <Route exact path="/order" element={<Order/>} />
-          <Route exact path="/account" element={<Account/>} />
+          <Route exact path="/account" element={<Account/>} /> 
           <Route exact path="/about" element={<About/>} />
         </Routes>
       </div>
