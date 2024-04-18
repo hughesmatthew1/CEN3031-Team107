@@ -26,8 +26,7 @@ function Menu() {
                     <div className="col-4" key={item.id}>
                         {<MenuItem item={item} key={item.id}/>}
                     </div>
-                ))
-                }
+                ))}
             </div> 
         </section>
         // Menu page html

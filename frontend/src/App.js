@@ -12,6 +12,11 @@ import About from './components/About.js';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
+
+  if (sessionStorage.getItem("user-cart") == null){
+    sessionStorage.setItem("user-cart", JSON.stringify([]))
+  }
+  
   return (
     <Router>
       <div className="container-app">

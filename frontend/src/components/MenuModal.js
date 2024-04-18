@@ -3,6 +3,12 @@ import MenuModalBody from "./MenuModalBody"
 
 function MenuModal({item}){
     
+    const handleClick = async (e) => {
+        e.preventDefault()
+        let cart = JSON.parse(sessionStorage.getItem("user-cart"))
+        cart.push(item)
+        sessionStorage.setItem("user-cart", JSON.stringify(cart))
+    }
 
     return(
         <div className="modal fade" id="MenuModal" tabIndex="-1" role="dialog" aria-labelledby="MenuTile" aria-hidden="true">
@@ -17,7 +23,7 @@ function MenuModal({item}){
                     {<MenuModalBody item={item}/>}
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Add to Order</button>
+                        <button type="button" className="btn btn-primary" onClick={handleClick} data-bs-dismiss="modal">Add to Order</button>
                     </div>
                 </div>
             </div>
