@@ -7,7 +7,7 @@ function SignUp({active_user}){
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        console.log("form submitted");
+
         const payload = {
             username: username,
             password: password
@@ -21,6 +21,9 @@ function SignUp({active_user}){
         .then(response => response.json())
         .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize the current user
         .catch(err => {console.error(err)})
+
+        // Force page to reload (brings user to user account page)
+        window.location.reload()
     }
 
     return(

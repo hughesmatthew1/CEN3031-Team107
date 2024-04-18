@@ -1,19 +1,30 @@
-import React from 'react';
-import Cart from './Cart';
+import React, {useState, useEffect} from 'react';
+import OrderUser from './OrderUser';
+import OrderGuest from './OrderGuest';
 
 function Order() {
-    return(
-        <section>
-            <h1 className="page-head">Place an order</h1>
-                <div className="order-page-body">
-                    <p>Query if user is logged in w jwt</p>
-                    <p>If not logged in, say log in to add items to cart, provide link to account page</p>
-                    <p>If logged in, display cart</p>
-                    {<Cart/>}
-                </div>
-        </section>
-        // Order page html
-    );
+
+    // Verify a user is logged in
+    // If not logged in, tell user to log in to view their cart & checkout
+    // If logged in, present cart, allow user to check out
+
+    const [active_user, setUser] = useState('')
+
+    useEffect(()=>{
+        setUser(sessionStorage.getItem("active-user"))
+        console.log(active_user)
+    })
+
+    if(!active_user){
+        return(
+            <OrderGuest/>
+        )
+    } else{
+        return(
+            <OrderUser/>
+        )
+    }
+
 }
 
 export default Order;

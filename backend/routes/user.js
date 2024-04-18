@@ -91,11 +91,10 @@ router.post('/login', async (req,res)=>{
 
 });
 
-//getting one user
+//getting one user by id
 router.get('/:id', getUser, (req,res) => {
     res.json(res.user)
 })
-
 
 //deleting a user
 router.delete('/:id', getUser, async (req, res) => {

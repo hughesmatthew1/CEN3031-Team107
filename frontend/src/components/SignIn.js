@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { json } from 'react-router-dom';
 
 function SignIn(){
     const [username, setUsername] = useState("");
@@ -21,6 +20,9 @@ function SignIn(){
         .then(response => response.json())
         .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize active user
         .catch(err => {console.error(err)})
+
+        // Force page to reload (brings user to user account page)
+        window.location.reload()
     }
 
     return(
@@ -38,7 +40,7 @@ function SignIn(){
                         <form onSubmit={handleSubmit} id="form-signin">
                             <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))}/>
                             <input type="password" id="password-field-signin" value={password} onChange={(e)=>(setPassword(e.target.value))}/>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                         </form>
                     </div>
                     <div className="modal-footer">
