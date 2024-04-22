@@ -106,7 +106,6 @@ function Checkout() {
         <div>
             <h1 className="page-head">Welcome to Wake'N'Bake</h1>
             <div className="checkout-body">
-                <div> {user.id} {user.username} {user.rewardPoints} </div>
                 <div className="checkout-display">
                     <div className="row">
                         <div className="col-6">

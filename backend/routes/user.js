@@ -46,6 +46,9 @@ router.post('/signup', async (req,res)=>{
         if (existingUser) {
             return res.status(400).json({ message: 'Username is already taken' });
         }
+        if (password.length < 8){
+            return res.status(400).json({ message: "Password too short"})
+        }
         // Creates new user object
         const user = new User({
             username,

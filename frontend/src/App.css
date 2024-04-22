@@ -8,7 +8,8 @@
 
 .container-app{
   background-color:sienna;
-  color: var(--text-color)
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
 /* Navbar Styling */
@@ -184,7 +185,7 @@
 /* Order Page Styling */
 
 .order-page-body{
-  padding: 0px 25vw;
+  padding: 10vh 25vw;
 }
 
 .order-header{
@@ -230,7 +231,7 @@
 /* Checkout Page Styling */
 
 .checkout-body{
-  padding: 0px 25vw;
+  padding: 10vh 25vw;
 }
 
 .checkout-display{
@@ -250,7 +251,7 @@
 /* Account Page Styling */
 
 .account-page-body{
-  padding: 0px 25vw;
+  padding: 10vh 25vw;
 }
 
 .account-display{

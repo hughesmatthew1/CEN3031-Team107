@@ -52,7 +52,7 @@ function SignUp({active_user}){
                         <form onSubmit={handleSubmit} id="form-signup">
                             <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))} placeholder="USERNAME"/>
                             <input type="password" id="password-field-signup" value={password} onChange={(e)=>(setPassword(e.target.value))} placeholder="PASSWORD"/>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary"data-bs-dismiss="modal">Submit</button>
                         </form>
                     </div>
                     <div className="modal-footer">

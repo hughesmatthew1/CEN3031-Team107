@@ -5,7 +5,7 @@ function AuthConfirmation() {
     // Verify that login worked
     // Direct to Account page
 
-    if (sessionStorage.getItem("active-user") == "undefined"){
+    if (sessionStorage.getItem("active-user") == "undefined" || sessionStorage.getItem("active-user") == ""){
         return(
             <div className="conf-page">
                 <h1 classname="page-header">Log in Unsuccessful</h1>
