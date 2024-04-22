@@ -11,26 +11,34 @@ POST http://localhost:3000/menu
 Content-Type: application/json
 
 {
-    "name": "Glazed Donut",
-    "price": 4.99,
-    "image": "donut.jpg",
-    "description": "Warm fresh donut covered with homemade glaze",
-    "macronutrients":{
-        "calories": 450,
-        "fats": 30,
-        "carbs": 45,
-        "protein": 8
+    "name": "Raspberry Danish",
+    "price": 3.99,
+    "image": "danish.jpg",
+    "description": "Buttery pastry filled with sweet raspberry jam",
+    "macronutrients": {
+        "calories": 350,
+        "fats": 18,
+        "carbs": 40,
+        "protein": 5
     },
-    "allergens": "none",
+    "allergens": "contains gluten, dairy",
     "rewardsPointsCOST": 200,
     "rewardsPointsADD": 100
-
-
 }
+
+
+
+
+
+
+
+
+
+
 
 ###
 //deleting a menu item
-DELETE http://localhost:3000/menu/66039d95513343748492c8ae
+DELETE http://localhost:3000/menu/6604fa8f640aaa19a22a4b5a
 
 ###
 //getting all users

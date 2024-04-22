@@ -6,7 +6,7 @@ function MenuItem({item}){
         <section>
             <button type="button" className="button container-fluid menuItem-tile" data-bs-toggle="modal" data-bs-target="#MenuModal">
                 <div className="row menuItem-img-row">
-                    Image Make entire tile a button that adds to active user cart
+                    Placeholder for image of our product
                     {/* Image */}
                 </div>
                 <div className="row">
