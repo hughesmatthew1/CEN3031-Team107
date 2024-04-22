@@ -1,11 +1,18 @@
+/* Global Variables */
+
 :root{
   --text-color: antiquewhite;
 }
 
+/* General Styling */
 
 .container-app{
   background-color:sienna;
+  color: var(--text-color);
+  min-height: 100vh;
 }
+
+/* Navbar Styling */
 
 .navbar-expand.default{
   background-color: saddlebrown;
@@ -20,25 +27,31 @@
   display: inline-block;
   font-variant: small-caps;
   font-size: 1.25em;
-  width: 100vw/5;
-}
-
-.navLogo {
-  color: var(--text-color);  
-  padding: 14px 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100vw/8;
 }
 
 .navbar-nav.al-auto {
-  padding: 0px 6vw;
-  max-width: (100/5)vw;
+  padding: 0px 3vw;
+  max-width: 18.33vw;
+}
+
+.navLogo {
+  background-image: url(./../public/images/WNBLogo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  color:rgba(240, 248, 255, 0);  
+  padding: 0px 3vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height:inherit
+}
+
+.sub-navLogo{
+  padding: 14px 0px;
 }
 
 .page-head {
-  color: var(--text-color);
   padding: 28px 0px;
   text-align: center;
   text-decoration: none;
@@ -47,11 +60,94 @@
   width: 100vw;
 }
 
-.row.menu-row{
-  padding: 10px 10px;
+/* Home Page Styling */
+
+.logo-image{
+  background-image: url(./../public/images/WNBLogo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height:256px;
 }
 
-.container-fluid.tile {
+.home-subhead{
+  padding: 28px 0px;
+  text-align: center;
+}
+
+.row.home-featured-row{
+  border-top-style:dashed;
+  border-bottom-style:dashed;
+  border-color:(var(--text-color));
+
+  background-color:rgb(170, 120, 55);
+
+  padding: 28px 0px;
+  height: fit-content;
+
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps; 
+}
+
+.col-4.item-1{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+.col-4.item-2{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+.col-4.item-3{
+  background-image: url(./../public/images/cookie.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 256px;
+}
+
+
+.row.home-rewards-other-row{
+  border-top-style:dashed;
+  border-bottom-style:dashed;
+  border-color:(var(--text-color));
+
+  background-color: rgb(237, 167, 76);
+
+  padding: 28px 0px;
+  height: fit-content;
+
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps; 
+}
+
+.col-6.reward-col{
+  border-right-style:dashed;
+  border-color:(var(--text-color));
+
+  text-align:center;
+}
+
+/* Menu Page Stying */
+
+.row.gy-3.menu-row{
+  padding: 10px 20px;
+}
+
+.button.container-fluid.menuItem-tile {
   border-style: groove;
   border-color:maroon;
   border-width: 6px;
@@ -61,8 +157,134 @@
 
   width: (100/4)vw;
   aspect-ratio: 2;
+}
+
+.row.menuItem-img-row{
+  height:90%
+}
+
+.modal-content.menu-modal-content{
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  justify-content: center;
+  justify-self: center;
+
+  width: (100/4)vw;
+  aspect-ratio: 2;
+}
+
+.modal-header{
+  justify-content: space-between;
+}
+
+/* Order Page Styling */
+
+.order-page-body{
+  padding: 10vh 25vw;
+}
+
+.order-header{
+  text-align: center;
+}
+
+.order-guest{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
 
 }
+
+.order-navLink{
+  color: black;
+}
+
+.user-cart{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+}
+
+.row.cart-item{
+  width: inherit;
+  position: inherit;
+}
+
+/* Checkout Page Styling */
+
+.checkout-body{
+  padding: 10vh 25vw;
+}
+
+.checkout-display{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+
+}
+
+/* Account Page Styling */
+
+.account-page-body{
+  padding: 10vh 25vw;
+}
+
+.account-display{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+}
+
+.account-header{
+  text-align: center;
+}
+
+.button.container-fluid.signIn-button{
+  width: 25vw;
+
+  text-align: center;
+}
+
+.button.container-fluid.signUp-button{
+  width: 25vw;
+
+  text-align: center;
+}
+
+
+/* About Page Styling */
 
 .about-text{
   color:antiquewhite;  
@@ -73,4 +295,25 @@
   font-variant:normal;
   font-size: 1.25em;
   width: 100vw;
+}
+
+/* Confirmation Page Styling */
+.conf-page{
+  align-content: center;
+  text-align: center;
+
+  padding: 25px 25vw;
+}
+
+.conf-body{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
 }

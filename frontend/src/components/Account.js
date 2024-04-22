@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import AccountGuest from "./AccountGuest.js"
+import AccountUser from "./AccountUser.js"
 
 function Account() {
-    return(
-        <section>
-            <div>
-                <h1 class="page-head">Your account</h1>
-                <p>Info and Rewards</p>
-            </div>
-        </section>
-    );
+    // Check whether there is an active user (session storage)
+
+    const [active_user, setUser] = useState('')
+
+    useEffect(()=>{
+        setUser(sessionStorage.getItem("active-user"))
+    }, [])
+
+    if(active_user == "" || active_user == "undefined"){
+        return(
+            <AccountGuest/>
+        );
+    }
+    else{
+        return(
+            <AccountUser/>
+        )
+    }
+    
 }
 
 export default Account;
