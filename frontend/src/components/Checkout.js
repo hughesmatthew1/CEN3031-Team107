@@ -104,21 +104,29 @@ function Checkout() {
     
     return(
         <div>
-            <h1 className="page-head">Welcome to Wake'N'Bake</h1>
+            <h1 className="page-head">Checkout</h1>
             <div className="checkout-body">
                 <div className="checkout-display">
                     <div className="row">
                         <div className="col-6">
-                            <div>Cost in $: ${costD}</div>
-                            <div>RP added: {addedRP}</div>
+                            <br></br>
+                            <div>Cost in Dollars: ${costD}</div>
+                            <br></br>
+                            <div>Reward Points Awarded: {addedRP}</div>
+                            <br></br>
                             <button className="checkout-pay-button" onClick={handleClickCard}>Pay with Card</button>
                         </div>
                         <div className="col-6">
-                            <div>Reward Points Available: </div>
-                            <div>Cost in RP: {costRP}</div>
+                            <br></br>
+                            <div>Reward Points Available: {user.rewardPoints} </div>
+                            <br></br>
+                            <div>Cost in Reward Points: {costRP}</div>
+                            <br></br>
                             <button className="checkout-pay-button" onClick={handleClickRP}>Pay with Reward Points</button>
                         </div>
                     </div>
+                    <br></br>
+                    <br></br>
                     <div>
                         <Link className="order-navLink" to="/order">Edit your Order</Link>
                     </div>

@@ -2,9 +2,12 @@ import React from "react";
 import MenuModal from "./MenuModal";
 
 function MenuItem({item}){
+
+    var modalTarget = "#MenuModal"+item.name.split(" ").join("")
+
     return(
         <section>
-            <button type="button" className="button container-fluid menuItem-tile" data-bs-toggle="modal" data-bs-target="#MenuModal">
+            <button type="button" className="button container-fluid menuItem-tile" data-bs-toggle="modal" data-bs-target={modalTarget}>
                 <div className="row menuItem-img-row">
                     Placeholder for image of our product
                     {/* Image */}
@@ -18,7 +21,7 @@ function MenuItem({item}){
                     </div>
                 </div>
             </button>
-            {<MenuModal item={item}/>}
+            
         </section>
     );
 }

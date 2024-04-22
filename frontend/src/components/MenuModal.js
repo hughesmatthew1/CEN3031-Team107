@@ -10,8 +10,10 @@ function MenuModal({item}){
         sessionStorage.setItem("user-cart", JSON.stringify(cart))
     }
 
+    var modalID = "MenuModal"+item.name.split(" ").join("")
+
     return(
-        <div className="modal fade" id="MenuModal" tabIndex="-1" role="dialog" aria-labelledby="MenuTile" aria-hidden="true">
+        <div className="modal fade" id={modalID} tabIndex="-1" role="dialog" aria-labelledby="MenuTile" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content menu-modal-content">
                     <div className="modal-header">
