@@ -19,21 +19,26 @@ router.post('/', async (req, res) => {
     const { calories, fats, carbs, protein } = macronutrients;
 
     try {
-      const menuItem = new MenuItem({
-        name,
-        description,
-        price,
-        image,
-        macronutrients: { calories, fats, carbs, protein },
-        allergens,
-        rewardsPointsCOST,
-        rewardsPointsADD
-      });
+        const existingItem = await MenuItem.findOne({ name });
+        if (existingItem) {
+            return res.status(400).json({ message: 'Item already exists' });
+        }
+
+        const menuItem = new MenuItem({
+            name,
+            description,
+            price,
+            image,
+            macronutrients: { calories, fats, carbs, protein },
+            allergens,
+            rewardsPointsCOST,
+            rewardsPointsADD
+        });
   
-      const newMenuItem = await menuItem.save();
-      res.status(201).json(newMenuItem);
+        const newMenuItem = await menuItem.save();
+        res.status(201).json(newMenuItem);
     } catch (err) {
-      res.status(400).json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
   });
 
