@@ -13,7 +13,7 @@ function MenuItem({item}){
                     <div className="col-9">
                         {item.name}
                     </div>
-                    <div class = "col-3">
+                    <div className = "col-3">
                         {item.price}
                     </div>
                 </div>

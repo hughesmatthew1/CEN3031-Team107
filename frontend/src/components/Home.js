@@ -49,7 +49,10 @@ function Home() {
                     <Link className="navLink" to="/account">Proceed to Log-In</Link>
                 </div>
                 <div className="col-6">
-                    Other Home Page Stuff
+                    <h2 className="home-subhead">Other Info</h2>
+                    For more info, please see our About page!
+                    <br></br>
+                    <Link className="navLink" to="/about">Proceed to About Page!</Link>
                 </div>
             </div>
         </div>        

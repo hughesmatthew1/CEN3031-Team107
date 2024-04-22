@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 function SignIn(){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate()
+
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -12,6 +16,7 @@ function SignIn(){
             password: password
         }
         // Login request (validate username and password, return token of user)
+
         await fetch("/user/login", {
             method: "POST", 
             body: JSON.stringify(payload), 
@@ -21,8 +26,9 @@ function SignIn(){
         .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize active user
         .catch(err => {console.error(err)})
 
-        // Force page to reload (brings user to user account page)
-        window.location.reload()
+        // Navigate to login confirmation page 
+        navigate("/authconfirmation")
+
     }
 
     return(
@@ -36,10 +42,10 @@ function SignIn(){
                         </button>
                     </div>
                     <div className="modal-body">
-                        text fields for username and password
+                        Fill out the following form to log into an existing account.
                         <form onSubmit={handleSubmit} id="form-signin">
-                            <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))}/>
-                            <input type="password" id="password-field-signin" value={password} onChange={(e)=>(setPassword(e.target.value))}/>
+                            <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))} placeholder="USERNAME"/>
+                            <input type="password" id="password-field-signin" value={password} onChange={(e)=>(setPassword(e.target.value))} placeholder="PASSWORD"/>
                             <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Submit</button>
                         </form>
                     </div>

@@ -11,7 +11,7 @@ function Account() {
         setUser(sessionStorage.getItem("active-user"))
     }, [])
 
-    if(!active_user){
+    if(active_user == "" || active_user == "undefined"){
         return(
             <AccountGuest/>
         );

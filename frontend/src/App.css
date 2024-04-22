@@ -187,6 +187,28 @@
   padding: 0px 25vw;
 }
 
+.order-header{
+  text-align: center;
+}
+
+.order-guest{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+
+}
+
+.order-navLink{
+  color: black;
+}
+
 .user-cart{
   justify-items: center;
 
@@ -197,12 +219,69 @@
   background-color: bisque;
   color:black;
 
+  text-align: center;
 }
 
 .row.cart-item{
   width: inherit;
   position: inherit;
 }
+
+/* Checkout Page Styling */
+
+.checkout-body{
+  padding: 0px 25vw;
+}
+
+.checkout-display{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+
+}
+
+/* Account Page Styling */
+
+.account-page-body{
+  padding: 0px 25vw;
+}
+
+.account-display{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
+}
+
+.account-header{
+  text-align: center;
+}
+
+.button.container-fluid.signIn-button{
+  width: 25vw;
+
+  text-align: center;
+}
+
+.button.container-fluid.signUp-button{
+  width: 25vw;
+
+  text-align: center;
+}
+
 
 /* About Page Styling */
 
@@ -215,4 +294,25 @@
   font-variant:normal;
   font-size: 1.25em;
   width: 100vw;
+}
+
+/* Confirmation Page Styling */
+.conf-page{
+  align-content: center;
+  text-align: center;
+
+  padding: 25px 25vw;
+}
+
+.conf-body{
+  justify-items: center;
+
+  border-style: groove;
+  border-color:maroon;
+  border-width: 6px;
+
+  background-color: bisque;
+  color:black;
+
+  text-align: center;
 }

@@ -102,14 +102,17 @@ Content-Type: application/json
     "rewardPoints": 0
 }
 
+###
+GET http://localhost:3000/user/661d8f23d133d4fd4a5d5824
+
 
 ###
 //updating a user **important
-PATCH http://localhost:3000/user/6604e55f2a65488c5ea19c99
+PATCH http://localhost:3000/user/661d8f23d133d4fd4a5d5824
 Content-Type: application/json
 
 {
-    "rewardPoints": 1000
+    "rewardPoints": 2000
 }
 
 ###

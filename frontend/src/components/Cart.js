@@ -1,19 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom"
 import CartItem from './CartItem.js';
 
 function Cart() {
-    // get request to auth
+    // Pull user-cart from session Storage, populate cart with each item in the cart
 
-    // if user logged in, return their cart
+    const [cart, setCart] = useState([])
 
-    // if user not logged in, display "can't check out as guest, please sign in" and a button to navigte to account page
-    return(
-        <div className="user-cart">
-            <h2>Your Cart</h2>
-            {<CartItem/>}
-            {<CartItem/>}
-        </div>        
-    );
+    useEffect(()=>{
+        setCart(JSON.parse(sessionStorage.getItem("user-cart")))
+    }, [])
+
+    
+    if (cart.length !== 0){
+        return(
+            <div className="user-cart">
+                {cart.map(item => (
+                    <div key={item.id}>
+                        {<CartItem item={item} key={item.id}/>}
+                    </div>
+                ))}
+                <div>
+                    <Link className="order-navLink" to="/checkout">Proceed to Checkout!</Link>
+                </div>
+            </div>   
+                 
+        );
+    }
+    
+    else {
+        return(
+            <div className="user-cart">
+                <h1>Cart Empty</h1>
+                <Link className="order-navLink" to="/menu">Click HERE to view our Menu!</Link>
+            </div>
+        )
+    }
+
 }
 
 export default Cart;

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp({active_user}){
+    const navigate = useNavigate()
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,12 +21,20 @@ function SignUp({active_user}){
             body: JSON.stringify(payload), 
             headers: {'Content-Type': 'application/json'}
         })
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok){
+                return response.json()
+            }
+            else {
+                throw new Error("Something went wrong")
+            }
+        })
         .then(json => {console.log(json); sessionStorage.setItem("active-user", json.token)}) // Sets session to recognize the current user
         .catch(err => {console.error(err)})
 
-        // Force page to reload (brings user to user account page)
-        window.location.reload()
+        // Navigate to the auth confirmation page
+        navigate("/authconfirmation")
+
     }
 
     return(
@@ -37,10 +48,10 @@ function SignUp({active_user}){
                         </button>
                     </div>
                     <div className="modal-body">
-                        text fields for username and password
+                        Fill out the following form to register for an account.
                         <form onSubmit={handleSubmit} id="form-signup">
-                            <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))}/>
-                            <input type="password" id="password-field-signup" value={password} onChange={(e)=>(setPassword(e.target.value))}/>
+                            <input type="text" id="username-field-signin" value={username} onChange={(e)=>(setUsername(e.target.value))} placeholder="USERNAME"/>
+                            <input type="password" id="password-field-signup" value={password} onChange={(e)=>(setPassword(e.target.value))} placeholder="PASSWORD"/>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
